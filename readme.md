@@ -140,5 +140,5 @@ The Car Management API is fully documented using Swagger. You can explore all av
 For any questions or feedback, feel free to contact:
 
 - **Name**: Bhavuk Mittal
-- **Email**: [vvbnmittal@example.com](mailto:your-email@example.com)
+- **Email**: [vvbnmittal@gmail.com](mailto:vvbnmittal@gmail.com)
 - **GitHub**: [bhavuk2002](https://github.com/bhavuk2002)
