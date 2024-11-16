@@ -1,16 +1,16 @@
 const express = require("express");
-const Car = require("./models/Car");
+const Car = require("../models/Car.js");
 const router = new express.Router();
 const multer = require("multer");
 const path = require("path");
 
-const { auth } = require("./auth/auth");
+const { auth } = require("../auth/auth.js");
 
 // Set up storage engine for multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Save files to the 'uploads' folder
-    cb(null, "./backend/uploads");
+    cb(null, "../backend/uploads");
   },
   filename: (req, file, cb) => {
     // Use original file name, or you can create a unique name
