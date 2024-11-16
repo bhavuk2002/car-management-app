@@ -3,14 +3,19 @@ const Car = require("../models/Car.js");
 const router = new express.Router();
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 const { auth } = require("../auth/auth.js");
+const uploadPath = path.resolve(__dirname, "../uploads");
+if (!fs.existsSync(uploadPath)) {
+  fs.mkdirSync(uploadPath, { recursive: true });
+}
 
 // Set up storage engine for multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Save files to the 'uploads' folder
-    cb(null, "../uploads");
+    cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
     // Use original file name, or you can create a unique name
