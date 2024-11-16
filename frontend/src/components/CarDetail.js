@@ -21,7 +21,7 @@ const CarDetail = ({ car, onDeleteSuccess }) => {
       const token = localStorage.getItem("token"); // Get the auth token from localStorage
 
       // Make the API call to delete the car
-      await axios.delete(`http://localhost:5000/car/${car._id}`, {
+      await axios.delete(`${baseURL}/car/${car._id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -54,3 +54,5 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/bhavuk2002/car-management-app.git
    ```
+
+2.
