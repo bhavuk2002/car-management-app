@@ -5,9 +5,9 @@ import App from "./App";
 import "flowbite";
 import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./utils/AuthContext";
-import { disabledReactDevTools } from "@fvilers/disable-react-devtools";
+// import { disabledReactDevTools } from "@fvilers/disable-react-devtools";
 
-disabledReactDevTools();
+// disabledReactDevTools();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
