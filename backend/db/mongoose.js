@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1/car-management-app", {
-  useNewUrlParser: true,
-  // useCreateIndex: true // useCreateIndex is depriciated // both depriciated
-});
+mongoose.connect(
+  "mongodb+srv://vvbnmittal:MGMGISDvOFb5x8AZ@cluster0.ldp9u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  {
+    // useNewUrlParser: true,
+    // useCreateIndex: true // useCreateIndex is depriciated // both depriciated
+  }
+);
