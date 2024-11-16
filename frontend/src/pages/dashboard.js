@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CarCard from "../components/CarCard";
 import SearchBar from "../components/SearchBar";
 import LogoutButton from "../components/LogoutButton";
+import baseURL from "../utils/config";
 
 const Dashboard = () => {
   const [cars, setCars] = useState([]); // Store the list of cars
@@ -16,7 +17,7 @@ const Dashboard = () => {
     const fetchCars = async () => {
       try {
         const token = localStorage.getItem("token"); // Assuming authToken is stored here
-        const response = await axios.get("http://localhost:5000/cars", {
+        const response = await axios.get(`${baseURL}/cars`, {
           headers: {
             Authorization: `Bearer ${token}`, // Pass JWT token in headers
           },

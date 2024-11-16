@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../utils/AuthContext";
+import baseURL from "../utils/config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ const Login = () => {
       console.log("Sending login request...");
 
       const response = await axios.post(
-        "http://localhost:5000/user/login", // Replace with your backend endpoint
+        `${baseURL}/user/login`, // Replace with your backend endpoint
         { email, password }
       );
 

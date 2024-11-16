@@ -1,4 +1,5 @@
 import React from "react";
+import baseURL from "../utils/config";
 
 const CarCard = ({ car, onClick }) => {
   return (
@@ -11,7 +12,7 @@ const CarCard = ({ car, onClick }) => {
         {/* Car Image */}
         <img
           className="rounded-t-lg w-full h-full object-cover transition-transform duration-300 ease-in-out transform"
-          src={`http://localhost:5000/uploads/${car.images[0]}`}
+          src={`${baseURL}/uploads/${car.images[0]}`}
           alt={car.title}
         />
       </div>

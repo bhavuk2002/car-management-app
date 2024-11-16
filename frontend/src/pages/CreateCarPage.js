@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import baseURL from "../utils/config.js";
 
 const CreateCar = () => {
   const [title, setTitle] = useState("");
@@ -32,7 +33,7 @@ const CreateCar = () => {
       tagsArray.forEach((tag) => formData.append("tags[]", tag)); // Send as array
 
       const token = localStorage.getItem("token"); // Auth token
-      await axios.post("http://localhost:5000/car/create", formData, {
+      await axios.post(`${baseURL}/car/create`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

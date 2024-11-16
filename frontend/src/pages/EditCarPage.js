@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom"; // To get the carId from the URL
+import baseURL from "../utils/config";
 
 const EditCar = () => {
   const [car, setCar] = useState(null);
@@ -17,7 +18,7 @@ const EditCar = () => {
     const fetchCarDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:5000/car/${carId}`, {
+        const response = await axios.get(`${baseURL}/car/${carId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -56,7 +57,7 @@ const EditCar = () => {
       for (let [key, value] of formData.entries()) {
         console.log(key, value); // Log each key and value in FormData
       }
-      await axios.patch(`http://localhost:5000/car/${carId}`, formData, {
+      await axios.patch(`${baseURL}/car/${carId}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

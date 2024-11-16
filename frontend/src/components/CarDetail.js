@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import axios from "axios"; // For making the API request
 import { FaTrash } from "react-icons/fa6"; // React Icons
 import { MdEdit } from "react-icons/md";
+import baseURL from "../utils/config";
 
 const CarDetail = ({ car, onDeleteSuccess }) => {
   const navigate = useNavigate(); // Initialize navigate function
@@ -88,7 +89,7 @@ const CarDetail = ({ car, onDeleteSuccess }) => {
         {car.images.map((image, index) => (
           <div key={index} className="overflow-hidden rounded-lg shadow-md">
             <img
-              src={`http://localhost:5000/uploads/${image}`}
+              src={`${baseURL}/uploads/${image}`}
               alt={`Car ${index + 1}`}
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
             />
