@@ -10,7 +10,7 @@ const { auth } = require("../auth/auth.js");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Save files to the 'uploads' folder
-    cb(null, "../backend/uploads");
+    cb(null, "../uploads");
   },
   filename: (req, file, cb) => {
     // Use original file name, or you can create a unique name
